@@ -1,2 +1,6 @@
 *.pdf
 *.mid
+tmp-*
+*.wav
+display.txt
+downloads/*

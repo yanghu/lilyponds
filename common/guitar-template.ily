@@ -1,11 +1,8 @@
 \version "2.20.0"  % necessary for upgrading to future LilyPond versions.
 
 % \include "definitions.ily"
-\include "common.ily"
+% \include "common.ily"
 
-\paper {
-%   annotate-spacing = ##t
-}
 
 \score{
 \new StaffGroup{
@@ -56,6 +53,8 @@
     }{
         \global
         \clef "G_8"
+        % \set Staff.midiMaximumVolume = #0.5
+        \set Staff.midiMaximumVolume = #0.7
         \blank-before
         \guitarA
     }
@@ -63,7 +62,10 @@
     \ifDefinedThenElse #'useGuitarB
     {
         \new Staff \with{
-            midiInstrument = "acoustic guitar (nylon)"
+            % midiInstrument = "acoustic guitar (nylon)"
+            % midiInstrument = "harmonica"
+            midiInstrument = "acoustic grand"
+            % midiInstrument = "piccolo"
             % midiInstrument = "acoustic guitar (steel)"
         }{
             \global
@@ -76,11 +78,12 @@
     {}
 
  	\new DrumStaff <<
-        \global
+    \global
 	  \drummode {
 	    << {
-        \set Staff.midiMaximumVolume = #0.7
-	    %   \repeat unfold 72 bd4\ff
+        % \set Staff.midiMaximumVolume = #0.7
+          \set Staff.midiMinimumVolume = #0.8
+	      \repeat unfold 20 bd4\ff
 	    } 
 	   >>
 	  }

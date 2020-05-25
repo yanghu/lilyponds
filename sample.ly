@@ -1,5 +1,7 @@
 \version "2.20.0"
-\include "common.ily"
+\include "use.ily"
+\use "common.ily"
+\use "classical-guitar.ily"
 
 % Only show the last few bars for easier typesetting.
 % showFirstLength = R2*5
@@ -11,6 +13,8 @@ blank-before = {R1*3}
 % Uncomment to add tab.
 % withTab = 1
 
+% \mergeDifferentlyHeadedOn
+% \mergeDifferentlyDottedOn
 \header {
   title= "Title"
 %   subsubtitle = "Note the phrasing and dynamics."
@@ -28,7 +32,7 @@ guitarA = {
     \relative{
         \partial 8 c8
         \repeat volta 2 {
-            c'
+            c' \startModernBarre #3 #4 d e f \stopBarre
         }
     }
 }

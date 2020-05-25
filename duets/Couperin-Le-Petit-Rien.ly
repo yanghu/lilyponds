@@ -1,5 +1,6 @@
 \version "2.20.0"
 \include "common.ily"
+\include "classical-guitar.ily"
 
 % Only show the last few bars for easier typesetting.
 % showFirstLength = R2*5
@@ -28,7 +29,7 @@ global = {
 guitarA = {
     \relative{
         {
-            d'4 a d |
+            <d'-4-\RH i>4 a d |
             d2 r4|
             e a, e'|
             e2 r4|
@@ -48,10 +49,10 @@ guitarA = {
             b2 cis4|
             \once \override TextScript.padding = #2
             \once \override TextScript.X-offset = #1
-            d2._\markup{\italic Fine}
+            d2._\markup{\small \italic Fine}
         }
         \repeat volta 2 {
-            a'='4-4^"II"_\p e-0 a|
+            <a'='-4>4_\p \pos #2 <e-0> a|
             a2.| \mBreak
 
             g8 a g fis g e|
